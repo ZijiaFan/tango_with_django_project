@@ -24,6 +24,7 @@ def about(request):
     return render(request, 'rango/about.html')
 
 
+@login_required
 def show_category(request, category_name_slug):
     context_dict = {}
 
