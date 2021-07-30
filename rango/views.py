@@ -21,7 +21,7 @@ def index(request):
 
 
 def about(request):
-    # Spoiler: you don't need to pass a context dictionary here.
+
     return render(request, 'rango/about.html')
 
 
@@ -79,7 +79,7 @@ def add_page(request, category_name_slug):
 
                 return redirect(reverse('rango:show_category', kwargs={'category_name_slug': category_name_slug}))
         else:
-            print(form.errors)  # This could be better done; for the purposes of TwD, this is fine. DM.
+            print(form.errors)
 
     context_dict = {'form': form, 'category': category}
     return render(request, 'rango/add_page.html', context=context_dict)
